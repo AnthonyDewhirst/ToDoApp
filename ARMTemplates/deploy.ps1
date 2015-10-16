@@ -1,5 +1,6 @@
 ﻿Param(
 	[string] $ResourceGroupSuffix = "",
+	[string] $ResourceGroupLocation = "North Europe",
 	[string] $SlotName = "Staging",
 	[string] $TemplateFile = "ProdAndStage.json",
 	[string] $TemplateParameterFile = "param.json",
@@ -80,7 +81,7 @@ else
 
 	#Resource Group Properties
 	$RG_Name = "ToDoApp$ResourceGroupSuffix"
-	$RG_Location = "West US"
+	$RG_Location = $ResourceGroupLocation
 
 	#Set parameters in parameter file and save to temp.json
 	(Get-Content ".\${TemplateParameterFile}" -Raw) `
