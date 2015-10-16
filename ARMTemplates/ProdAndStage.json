@@ -205,20 +205,20 @@
                                     "type": "SQLAzure"
                                 }
                             }
-                        }//,
-                        //{
-                        //    "apiVersion": "2015-04-01",
-                        //    "name": "web",
-                        //    "type": "sourcecontrols",
-                        //    "dependsOn": [
-                        //        "[resourceId('Microsoft.Web/Sites/Slots', variables('apiSiteName'), parameters('slotName'))]",
-                        //        "[resourceId('Microsoft.Web/Sites/Slots/config', variables('apiSiteName'), parameters('slotName'), 'appsettings')]"
-                        //    ],
-                        //    "properties": {
-                        //        "RepoUrl": "[parameters('repoUrl')]",
-                        //        "branch": "[parameters('branch')]"
-                        //    }
-                        //}
+                        },
+                        {
+                            "apiVersion": "2015-04-01",
+                            "name": "web",
+                            "type": "sourcecontrols",
+                            "dependsOn": [
+                                "[resourceId('Microsoft.Web/Sites/Slots', variables('apiSiteName'), parameters('slotName'))]",
+                                "[resourceId('Microsoft.Web/Sites/Slots/config', variables('apiSiteName'), parameters('slotName'), 'appsettings')]"
+                            ],
+                            "properties": {
+                                "RepoUrl": "[parameters('repoUrl')]",
+                                "branch": "[parameters('branch')]"
+                            }
+                        }
                     ]
                 }
             ]
@@ -281,20 +281,20 @@
                                 "apiPath": "[concat('http://', reference(resourceId('Microsoft.Web/Sites/Slots', variables('apiSiteName'), parameters('slotName'))).hostNames[0], '/api')]",
                                 "PROJECT": "src\\MultiChannelToDo.Web\\MultiChannelToDo.Web.csproj"
                             }
-                        }//,
-                        //{
-                        //    "apiVersion": "2015-04-01",
-                        //    "name": "web",
-                        //    "type": "sourcecontrols",
-                        //    "dependsOn": [
-                        //        "[resourceId('Microsoft.Web/Sites/slots', parameters('siteName'), parameters('slotName'))]",
-                        //        "[resourceId('Microsoft.Web/Sites/slots/config', parameters('siteName'), parameters('slotName'), 'appsettings')]"
-                        //    ],
-                        //    "properties": {
-                        //        "RepoUrl": "[parameters('repoUrl')]",
-                        //        "branch": "[parameters('branch')]"
-                        //    }
-                        //}
+                        },
+                        {
+                            "apiVersion": "2015-04-01",
+                            "name": "web",
+                            "type": "sourcecontrols",
+                            "dependsOn": [
+                                "[resourceId('Microsoft.Web/Sites/slots', parameters('siteName'), parameters('slotName'))]",
+                                "[resourceId('Microsoft.Web/Sites/slots/config', parameters('siteName'), parameters('slotName'), 'appsettings')]"
+                            ],
+                            "properties": {
+                                "RepoUrl": "[parameters('repoUrl')]",
+                                "branch": "[parameters('branch')]"
+                            }
+                        }
                     ]
                 }
             ]
